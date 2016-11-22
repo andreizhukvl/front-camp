@@ -32,7 +32,7 @@ var NewsHelper = function () {
           for (var _iterator = data.articles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var article = _step.value;
 
-            newsHTML += '<p>' + article.title + '</p>';
+            newsHTML += '<div class=\'article\'>\n           <a href="' + article.url + '">\n             <div>\n               <h2>' + article.title + '</h2>\n               <img src="' + article.urlToImage + '"></img>\n               <p>' + article.description + '</p>\n             </div>\n           </a>\n         </div>';
           }
         } catch (err) {
           _didIteratorError = true;

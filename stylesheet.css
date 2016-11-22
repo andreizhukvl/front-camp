@@ -1,0 +1,17 @@
+#feed
+{
+    margin: 0 auto;
+    max-width: 1280px;
+    min-width: 240px;
+    width: auto;
+}
+
+img
+{
+  width: 100%;
+}
+
+h1, h2, p
+{
+  text-align: center;
+}

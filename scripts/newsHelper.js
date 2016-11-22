@@ -14,7 +14,16 @@ class NewsHelper {
     }).then(data => {
       let newsHTML = ``;
       for(let article of data.articles) {
-        newsHTML += `<p>${article.title}</p>`;
+        newsHTML += 
+        `<div class='article'>
+           <a href="${article.url}">
+             <div>
+               <h2>${article.title}</h2>
+               <img src="${article.urlToImage}"></img>
+               <p>${article.description}</p>
+             </div>
+           </a>
+         </div>`;
       }
 
       this.container.innerHTML = newsHTML;
