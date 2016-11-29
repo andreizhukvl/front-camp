@@ -8,5 +8,10 @@
     "css-loader": "^0.26.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3"
+  },
+  "scripts": {
+    "build:p": "webpack --config webpack.config.prod.js --progress --colors",
+    "build": "webpack --config webpack.config.dev.js --progress --colors",
+    "dev-server": "webpack-dev-server --hot --config webpack.config.dev.js"
   }
 }

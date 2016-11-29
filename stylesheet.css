@@ -2,6 +2,7 @@ body
 {
   font-family: 'PT Serif',Georgia,Times,'Times New Roman',serif;
   color: #8c7b7b;
+  text-align: center;
 }
 
 #feed
@@ -42,11 +43,6 @@ img
     width: 100%;
     height: auto;
   }
-}
-
-h1, h2, p
-{
-  text-align: center;
 }
 
 #feed h1
