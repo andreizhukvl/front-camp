@@ -1,7 +1,7 @@
 var webpack  = require('webpack');
 
 module.exports = {
-    entry: "./scripts/feed.js",
+    entry: "./scripts/app.js",
     output: {
         path: __dirname,
         filename: "babeled/bundle.js"

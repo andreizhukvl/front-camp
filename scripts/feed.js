@@ -1,21 +1,24 @@
 require("!style!css!../stylesheet.css");
 import SourcesHelper from './sourcesHelper.js';
+import NewsHelper from './newsHelper.js';
 
-window.onload = () => {
+export function run() {
+  applyLayout();
+
   let dropbox = document.getElementById("sources");
   let sourcesHelper = new SourcesHelper(dropbox);
   sourcesHelper.load();
 
-  let button = document.getElementById("magic_button");
-
-  button.addEventListener("click", function() 
-  {
-    let dropbox = document.getElementById("sources");
-
-    require.ensure(["./newsHelper"], function() {
-      let NewsHelper = require("./newsHelper");
-      let newsHelper = new NewsHelper(document.getElementById("feed"));
-      newsHelper.load(dropbox.value);
-    });
+  dropbox.addEventListener("change", () => {
+    let newsHelper = new NewsHelper(document.getElementById("feed"));
+    newsHelper.load(dropbox.value);
   });
-};
+}
+
+function applyLayout() {
+  let content = document.getElementById("content");
+  content.style.display = 'initial';
+
+  let startButton = document.getElementById("start");
+  startButton.style.display = 'none';
+}

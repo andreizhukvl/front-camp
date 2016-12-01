@@ -1,14 +1,21 @@
 module.exports = {
-    entry: "./scripts/feed.js",
+    // entry: {
+    //     start: "./scripts/app.js",
+    //     lazy: "./scripts/feed.js"
+    // },
+    entry: "./scripts/app.js",
     output: {
-        path: __dirname,
-        filename: "babeled/bundle.js"
+        path: __dirname + '/build/',
+        publicPath: __dirname + '/build/',
+        filename: "bundle.js"
     },
     module: {
         loaders: [
             { test: /\.css$/, loader: "style!css" },
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { 
-                presets: ['es2015']}              
+            {
+                test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: {
+                    presets: ['es2015']
+                }
             }
         ]
     },
@@ -18,8 +25,8 @@ module.exports = {
     },
     cache: true,
     devtool: "eval",
-    devServer: { 
+    devServer: {
         inline: true,
         port: 8008
-     }
+    }
 };
