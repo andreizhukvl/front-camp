@@ -6,14 +6,16 @@ window.onload = () => {
   let sourcesHelper = new SourcesHelper(dropbox);
   sourcesHelper.load();
 
-  dropbox.addEventListener("change", function() 
+  let button = document.getElementById("magic_button");
+
+  button.addEventListener("click", function() 
   {
-    let sourceValue = this.value;
+    let dropbox = document.getElementById("sources");
 
     require.ensure(["./newsHelper"], function() {
       let NewsHelper = require("./newsHelper");
       let newsHelper = new NewsHelper(document.getElementById("feed"));
-      newsHelper.load(sourceValue);
+      newsHelper.load(dropbox.value);
     });
   });
 };
