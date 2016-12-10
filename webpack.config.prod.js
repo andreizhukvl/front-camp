@@ -4,7 +4,7 @@ module.exports = {
     entry: "./scripts/feed.js",
     output: {
         path: __dirname,
-        filename: "babeled/bundle.js"
+        filename: "build/bundle.js"
     },
     module: {
         loaders: [
